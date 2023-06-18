@@ -38,7 +38,7 @@ def submit(request):
                 "We have successfully received your query.\n\n"
                 "Query: {query}\n"
                 "Solution: Kindly visit www.talentserve.org for more information.".format(name=name, query=query),
-                "hello@talentserve.org",
+                "", #enter email here
                 [email],  # Use recipient's email from the form
                 fail_silently=False,
                 )

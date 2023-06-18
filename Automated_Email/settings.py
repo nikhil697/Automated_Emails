@@ -130,6 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER= 'hello@talentserve.org'
+EMAIL_HOST_USER= ''  
+# enter email in the above line
 EMAIL_HOST_PASSWORD=''
+# Enter password in above line 
 EMAIL_USE_TLS = True
