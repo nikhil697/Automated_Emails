@@ -72,6 +72,7 @@
             border: none;
             padding: 7px 30px 7px 30px;
             color: white;
+
         }
 
         .divOuterLine {
@@ -574,14 +575,28 @@
             <div style="padding-left: 40px;" class="col-lg-5 col-md-5 col-sm-12 ">
                 <h2 id="mainHeading">Have a Query?</h2>
                 <h3 id="subHeading">Ask Us Today</h3><br>
-                <form method="POST" action="{% url 'submit' %}" class="signupForm">
-                    {% csrf_token %}
-                    <input type="text" name="name" placeholder="Full Name" required="">
-                    <input type="email" name="email" placeholder="Email ID" required="">
-                    <input type="number" name="phone" placeholder="Phone Number" required="">
-                    <textarea id="queryBox" placeholder="Your Query" name="query" rows="4" cols="50" required=""></textarea><br>
-                    <button type="submit" class="modButton">Submit</button>
-                </form>
+                <form method="post" action="{% url 'submit' %}" class='signupForm'>
+                  {% csrf_token %}
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required>
+                  <br>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                  <br>
+                  <label for="phone">Phone:</label>
+                  <input type="tel" id="phone" name="phone" required>
+                  <br>
+                  <label for="query">Query:</label>
+                  <select name="query" onchange="handleOptionChange(this)" required>
+                      <option value="" disabled selected>Select your query</option>
+                      <option value="1">What is Talent Serve?</option>
+                      <option value="2">What is the major work done by the company?</option>
+                      <option value="3">Is there any app available?</option>
+                  </select>
+                  <br><br>
+                  <button type="submit" value="Submit" class="modButton">Submit</button>
+              </form>
+              
             </div>
             <div class="col-lg-7 col-md-7 col-sm-12 manyMoreContainer">
                 <div class="divOuterLine" style="text-align: left;">
